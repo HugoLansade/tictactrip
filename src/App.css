@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 80px;
 }
 
 .header-name{
@@ -44,6 +45,7 @@
 
 .logo-ttt{
   height: 8vh;
+  min-height: 70px;
 }
 
 
@@ -73,6 +75,7 @@
   justify-content: space-around;
   height: 80vh;
   width: 100vw;
+  min-height: 200px;
 }
 
 .text-area{
