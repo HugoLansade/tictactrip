@@ -1,5 +1,7 @@
 export type TextProps = {
-    text : (e?:any) => Promise<void>
+    // text : (token :string, e?:any) => Promise<void>
+    text : ( e?:any) => Promise<void>
+
 }
 
 export type AuthProps = {
