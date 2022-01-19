@@ -32,18 +32,20 @@ function App() {
 
       const textUnjustified = e.target[0].value;
       console.log(textUnjustified)        
-      const res1 = await APIHandler.post("/api/justify", {text : textUnjustified },
+      const res1 = await APIHandler.post("/api/justify", textUnjustified ,
           {
               headers: { 
-                Authorization: `Bearer ${accessToken}`//,
-                //"Content-Type" : "text/plain" //lorsque l'on utilise ce fragement on n'a plus acces au body
+                Authorization: `Bearer ${accessToken}`,
+                "Content-Type" : "text/plain" //lorsque l'on utilise ce fragement on n'a plus acces au body
               }
           }
       )
-      console.log("res1.data.justifyText")
+      console.log("RESPONSE SERVER :")
 
-      console.log(res1.data.textJustified)
-      e.target[0].value = res1.data.textJustified
+      console.log(res1.data)
+      console.log(res1)
+
+      e.target[0].value = res1.data
       console.log("Form submited")
   }
 

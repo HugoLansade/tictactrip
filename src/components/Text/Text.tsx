@@ -12,7 +12,6 @@ export default function Text({text} :TextProps ) {
             <textarea id="story" 
                 name="story" 
                 className='text-area' 
-                maxLength={80} 
                 placeholder='Write / copy your text here ...'>
             </textarea>
             <ButtonMain/>

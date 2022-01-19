@@ -60,6 +60,15 @@
   border : none;
 }
 
+.btn-container:hover{
+  background-color: var(--green);
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px 50px;
+  box-shadow:0 3px 10px grey;
+  border : none;
+}
+
 .btn-text{
   color: var(--white);
   font-size: 2em;
