@@ -8,12 +8,12 @@ export default function Auth({login} : AuthProps) {
     }
    // https://fr.reactjs.org/docs/forms.html add handlechange to input to remove those log errors
     return (
-        <div>
+        <div id='global-container-login'>
             <form id='form-login' onSubmit={login}>
-                <label>Email:
-                    <input type="text" value={"foo@bar.baz"} onChange={todo}/>                
+                <label className='label-login'>Email:
+                    <input className='input-email' type="text" value={"foo@bar.baz"} onChange={todo}/>                
                 </label>
-                <input type="submit" value="Login" />
+                <input className='btn-login' type="submit" value="Login" />
             </form>
         </div>
     )
