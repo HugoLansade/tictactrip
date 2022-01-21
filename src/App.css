@@ -16,7 +16,7 @@
   background-color: var(--green);
   width: auto;
   height : 13vh;
-  box-shadow:0 5px 10px grey;
+  box-shadow: 0 1px 10px grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,7 +112,7 @@
 
 .input-email{
   margin: 0px 2px;
-  padding: 1px;
+  padding: 4px;
   border: 1px solid var(--green);
   border-radius: 2px;
 }

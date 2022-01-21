@@ -9,43 +9,31 @@ import axios from "axios";
 
 function App() {
   const [accessToken, setaccessToken] = useState("")
-  const [refreshToken, setrefreshToken] = useState("")
-
 
     const handleSubmitLogin = async (e :any) => {
         e.preventDefault();
         const email = e.target[0].value;
-        console.log(email)
-
         const res = await axios.post("http://localhost:2000/api/token", {email : email});
-        console.log(res.data)
+        console.log("BACK RESPONSE :",res.data)
         setaccessToken(res.data.accessToken);
-        setrefreshToken(res.data.refreshToken);
         console.log("Form login submited")
-        // return {accessToken : res.data.accessToken, refreshToken : res.data.refreshToken}
     }
-
-
 
     const handleSubmitText = async (e :any) => {
       e.preventDefault();
-
       const textUnjustified = e.target[0].value;
-      console.log(textUnjustified)        
-      const res1 = await APIHandler.post("/api/justify", textUnjustified ,
+      const resJustify = await APIHandler.post("/api/justify", textUnjustified ,
           {
               headers: { 
                 Authorization: `Bearer ${accessToken}`,
-                "Content-Type" : "text/plain" //lorsque l'on utilise ce fragement on n'a plus acces au body
+                "Content-Type" : "text/plain"
               }
           }
-      )
+      )      
+      e.target[0].value = resJustify.data
+
       console.log("RESPONSE SERVER :")
-
-      console.log(res1.data)
-      console.log(res1)
-
-      e.target[0].value = res1.data
+      console.log(resJustify.data)
       console.log("Form submited")
   }
 
