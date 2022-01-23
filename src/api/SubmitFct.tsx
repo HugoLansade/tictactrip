@@ -1,7 +1,7 @@
 import APIHandler from '../api/APIHandler';
 
 
-export const handleSubmitLogin = async (e :any) => {
+export const  handleSubmitLogin = async (e :any) => {
     e.preventDefault();
     const email = e.target[0].value;
     console.log(email)
