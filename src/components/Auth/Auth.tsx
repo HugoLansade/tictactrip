@@ -1,20 +1,33 @@
-import { AuthProps } from '../../Types';
+interface AuthProps {
+  email: string;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  handleSubmitLogin: (e: React.FormEvent<HTMLFormElement>) => void;
+}
 
+export default function Auth({
+  email,
+  setEmail,
+  handleSubmitLogin,
+}: AuthProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
 
-export default function Auth({login} : AuthProps) {
-
-    const todo = () => {
-        console.log("todo handle other values")
-    }
-   // https://fr.reactjs.org/docs/forms.html add handlechange to input to remove those log errors
-    return (
-        <div id='global-container-login'>
-            <form id='form-login' onSubmit={login}>
-                <label className='label-login'>Email :
-                    <input className='input-email' type="text" value={"foo@bar.baz"} onChange={todo}/>                
-                </label>
-                <input className='btn-login' type="submit" value="Login" />
-            </form>
-        </div>
-    )
+  return (
+    <div id="global-container-login">
+      <form id="form-login" onSubmit={handleSubmitLogin}>
+        <label className="label-login">
+          Email :
+          <input
+            required
+            className="input-email"
+            type="email"
+            onChange={handleChange}
+            value={email}
+          />
+        </label>
+        <input className="btn-login" type="submit" value="Login" />
+      </form>
+    </div>
+  );
 }
