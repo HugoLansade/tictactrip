@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Tictactrip Rest Api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Lien vers le projet deployé](https://tictactrip-client.vercel.app/)
 
-## Available Scripts
+## Structure du projet
 
-In the project directory, you can run:
+### Components
 
-### `npm start`
+Le projet contient quatre composants principaux :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Header
+- ButtonMain : le button permettant de justifier le text
+- Text : la zone dans laquelle l'utilisateur peut écrire ou coller du texte à justifier
+- Auth : le form permettant de se login et d'obtenir un token accordant l'authorization de justifier le text
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### App
 
-### `npm test`
+L'App contient l'ensemble des composants ainsi que les fonctions permettant de fetcher des informations du back.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- handleSubmitLogin : Permet de créer un token suite à la création d'un login avec email
+- handleSubmitText : Permet de poster du text en type text/plain , en passant dans les headers le token d'accès
 
-### `npm run build`
+Ces deux fonctions vont stocker les réponses de la base de donnée dans des hooks qui sont passés en paramètre pour les autres composants.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Le css est regroupé en un fichier car très peu de styling était nécessaire (et demandé) pour ce projet. Il aurait cependant été plus approprié de le mettre dans chaque dossier de component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### APIHandler
 
-### `npm run eject`
+Permet de simplifier l'utilisation d'axios dans le projet. Il est uniquement nécessaire d'écrire la fin de la route et non pas le début qui est similaire à toutes les routes. Cela limite le nombre de correction si l'on change le port du backend.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Lien vers le repertoire contenant le back
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Lien vers le code du back](https://github.com/HugoLansade/tictactrip-server).

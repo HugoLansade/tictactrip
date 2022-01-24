@@ -8,14 +8,16 @@ import APIHandler from "./api/APIHandler";
 function App() {
   const [accessToken, setAccessToken] = useState("");
   const [text, setText] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("foo@bar.baz");
 
+  // Token creation request
   const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await APIHandler.post("/api/token", { email });
     setAccessToken(res.data.token);
   };
 
+  // Text justification request
   const handleSubmitText = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 

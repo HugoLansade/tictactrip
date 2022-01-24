@@ -136,7 +136,6 @@ code {
   border-radius: 3px;
   padding: 5px;
   margin: 1px;
-  /* box-shadow:0 5px 10px grey; */
   border: none;
 }
 
@@ -148,6 +147,5 @@ code {
   border-radius: 3px;
   padding: 3px;
   margin: 1px;
-  /* box-shadow:0 5px 10px grey; */
   border: 2px solid var(--green);
 }
